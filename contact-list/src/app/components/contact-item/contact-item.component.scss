@@ -1,0 +1,27 @@
+.contact-item {
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 4px;
+    border:1px solid #2eb9ce;
+    display: inline-flex;
+    
+    .user-icons{
+        text-align:center;
+        color: white;
+        background-color: #5b8067;
+        width: 25px;
+        i{
+            top: 40%;
+            position: relative;
+        }
+    }
+
+    .user-info{
+        .user-delete{
+            float: left;
+        }
+        .user-check{
+            float: right;  
+        }
+    }
+}  

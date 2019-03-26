@@ -1,0 +1,22 @@
+<a routerLink="/"> Back</a>
+<ng-container *ngIf="contactDetail; then contactFound; else contactNoFound"> </ng-container>
+
+<ng-template #contactFound>
+
+  <div class="contact-item">
+    <div class="user-icons">
+        <i class="fas fa-user"></i>
+      </div>
+  <div class="user-info">
+    <p *ngIf="contactDetail.id"><span class="contact-id-label">ID: </span><span class="contact-id-field">{{contactDetail.id}}</span></p>
+    <p *ngIf="contactDetail.name"><span class="contact-name-field">{{contactDetail.name}}</span></p>
+    <p *ngIf="contactDetail.lastName"><span class="contact-lastName-field">{{contactDetail.lastName}}</span></p>
+    <p *ngIf="contactDetail.email"><span class="contact-email-field">{{contactDetail.email}}</span></p>
+    <p *ngIf="contactDetail.phone"><span class="contact-phone-field">{{contactDetail.phone}}</span></p>
+  </div>
+  </div>
+</ng-template>
+
+<ng-template #contactNoFound>
+  <div><h1>No contact found</h1></div>
+</ng-template>

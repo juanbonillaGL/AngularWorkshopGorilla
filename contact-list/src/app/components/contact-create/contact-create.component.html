@@ -1,0 +1,64 @@
+<a routerLink="/"> Back</a>
+
+<form class="form-horizontal" (ngSubmit)="submitMethod()" [formGroup]="contactForm">
+
+    <div class="alert alert-danger alert-dismissable" *ngIf="contactForm.invalid">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Error!</strong> Formulario no es valido
+    </div>
+    <div class="alert alert-danger alert-dismissable" *ngIf="contactForm.get('email').hasError('email') && contactForm.get('email').touched">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Error!</strong> Invalid contact email
+    </div>
+
+  <fieldset>
+    
+  
+    <legend>Form</legend>
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="id">Contact Id</label>  
+      <div class="col-md-4">
+      <input id="id" name="id" formControlName="id"  type="number" placeholder="id" class="form-control input-md"> 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="name">Contact name</label>  
+      <div class="col-md-4">
+      <input id="name" name="id" formControlName="name"  type="text" placeholder="name" class="form-control input-md"> 
+      </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="lastName">Contact lastName</label>  
+        <div class="col-md-4">
+        <input id="lastName" name="lastName" formControlName="lastName"  type="text" placeholder="lastName" class="form-control input-md"> 
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Contact email</label>  
+          <div class="col-md-4">
+          <input id="email" name="email" formControlName="email"  type="email" placeholder="email" class="form-control input-md"> 
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="phone">Contact phone</label>  
+            <div class="col-md-4">
+            <input id="phone" name="phone" formControlName="phone"  type="tel" placeholder="phone" class="form-control input-md"> 
+            </div>
+          </div>
+    </fieldset>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="button1id">Double Button</label>
+      <div class="col-md-8">
+        <button  type="reset" class="btn btn-danger">Reset</button>
+        <button type="submit" [disabled]="contactForm.invalid" class="btn btn-success">Crear</button>
+      </div>
+    </div>
+   
+</form>
+    

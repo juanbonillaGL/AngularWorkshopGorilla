@@ -1,0 +1,8 @@
+
+<a routerLink="/create"> Add New</a>
+
+<ul class="contacts-list">
+  <li *ngFor="let contact of contacts">
+    <app-contact-item [contact]="contact" (deleted)="onDelete($event)"></app-contact-item>
+  </li>
+</ul>

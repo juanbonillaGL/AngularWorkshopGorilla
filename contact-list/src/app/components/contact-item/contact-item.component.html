@@ -1,0 +1,12 @@
+<div class="contact-item">
+    <div class="user-icons">
+        <i class="fas fa-user"></i>
+      </div>
+  <div class="user-info">
+    <p *ngIf="contact.id"><span class="contact-id-label">ID: </span><span class="contact-id-field">{{contact.id}}</span></p>
+    <p *ngIf="contact.name"><span class="contact-name-field">{{contact.name}}</span></p>
+    <p *ngIf="contact.lastName"><span class="contact-lastName-field">{{contact.lastName}}</span></p>
+    <a href="#"  (click)="deleteContact($event, contact.id)" class="user-delete"> <i class="far fa-trash-alt"></i></a>
+    <a class="user-check" routerLink="/contact/{{contact.id}}"> <i class="fas fa-forward"></i></a>
+  </div>
+</div>
